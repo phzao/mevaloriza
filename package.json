@@ -1,15 +1,23 @@
 {
-  "name": "mevaloriza",
+  "name": "@mevaloriza/mevaloriza",
   "version": "1.0.0",
-  "description": "",
+  "description": "me valoriza package",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paulo Henrique P Botelho",
   "license": "ISC",
   "devDependencies": {
     "lerna": "^3.22.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phzao/mevaloriza.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phzao/mevaloriza/issues"
+  },
+  "homepage": "https://github.com/phzao/mevaloriza#readme"
 }
