@@ -1,17 +1,31 @@
 {
-  "name": "@mevaloriza/mevaloriza",
-  "version": "1.0.0",
-  "description": "me valoriza package",
-  "main": "index.js",
+  "name": "mevaloriza",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.2",
+    "web-vitals": "^1.0.1",
+    "styled-components": "^5.2.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "poi --serve",
+    "start:pkg": "RUN_PKG=true poi --serve",
+    "init": "lerna run start --parallel --scope @mevaloriza/components --scope @mevaloriza/services",
+    "build": "poi --prod",
+    "fix:prettier": "prettier \"src/**/*.{ts,tsx,mdx,js}\" --write",
+    "test": "jest"
   },
   "keywords": [],
-  "author": "Paulo Henrique P Botelho",
+  "author": "phz",
   "license": "ISC",
-  "devDependencies": {
-    "lerna": "^3.22.1"
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/phzao/mevaloriza.git"
@@ -19,5 +33,27 @@
   "bugs": {
     "url": "https://github.com/phzao/mevaloriza/issues"
   },
-  "homepage": "https://github.com/phzao/mevaloriza#readme"
+  "homepage": "https://github.com/phzao/mevaloriza#readme",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "poi": "^12.10.3"
+  }
 }
