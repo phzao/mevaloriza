@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rebass/preset": "^4.0.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "emotion-theming": "^11.0.0",
+    "primereact": "^6.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.0.1",
-    "styled-components": "^5.2.1"
+    "react-scripts": "^2.0.5",
+    "rebass": "^4.0.7",
+    "styled-components": "^5.2.1",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "poi --serve",
@@ -18,7 +22,9 @@
     "init": "lerna run start --parallel --scope @mevaloriza/components --scope @mevaloriza/services",
     "build": "poi --prod",
     "fix:prettier": "prettier \"src/**/*.{ts,tsx,mdx,js}\" --write",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "keywords": [],
   "author": "phz",
@@ -34,12 +40,6 @@
     "url": "https://github.com/phzao/mevaloriza/issues"
   },
   "homepage": "https://github.com/phzao/mevaloriza#readme",
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,7 +53,21 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.0.9",
     "lerna": "^3.22.1",
-    "poi": "^12.10.3"
+    "lint-staged": "^10.5.4",
+    "poi": "^12.10.3",
+    "prettier": "2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
