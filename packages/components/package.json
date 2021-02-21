@@ -6,13 +6,14 @@
   "author": "pHz <photelho@mail.com>",
   "homepage": "https://github.com/phzao/mevaloriza/tree/master/packages/components#readme",
   "license": "ISC",
-  "main": "lib/components.js",
+  "main": "dist/index.js",
+  "source": "src/**/index.js",
   "directories": {
-    "lib": "lib",
+    "lib": "src",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "src"
   ],
   "publishConfig": {
     "access": "public"
@@ -26,5 +27,8 @@
   },
   "bugs": {
     "url": "https://github.com/phzao/mevaloriza/issues"
+  },
+  "peerDependencies": {
+    "styled-components": "^5.2.1"
   }
 }
